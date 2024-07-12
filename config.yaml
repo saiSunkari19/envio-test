@@ -1,0 +1,34 @@
+name: My Envio Indexer
+networks:
+- id: 59144
+  start_block: 2324702
+  contracts:
+  - name: ClutchGeneralCollection
+    address:
+    - 0x6D09C6c741B6B9c1e009616359b914706D7bf9B7
+    - 0x9Dd4a2A1dB6bc1168de7D758208AbB109d9A386A
+    - 0xCBdF3811CC229089B40Ca793d43BA7100c537adf
+    - 0xB8DD4f5Aa8AD3fEADc50F9d670644c02a07c9374
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
+    - event: ApprovalForAll(address indexed owner, address indexed operator, bool approved)
+    - event: BatchMetadataUpdate(uint256 _fromTokenId, uint256 _toTokenId)
+    - event: Initialized(uint64 version)
+    - event: MetadataUpdate(uint256 _tokenId)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Paused(address account)
+    - event: Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
+    - event: Unpaused(address account)
+  - name: Marketplace
+    address:
+    - 0x687a153156CB5Ad05c6e0ba366De41d5b23e0138
+    handler: src/EventHandlers.ts
+    events:
+    - event: Initialized(uint64 version)
+    - event: Listed(uint256 indexed listingId, address indexed seller, address indexed nftContract, uint256 tokenId, uint256 price, address paymentToken)
+    - event: ListingPriceUpdated(uint256 indexed listingId, uint256 newPrice)
+    - event: NFTDelisted(uint256 listingId)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: PlatformFeeUpdated(uint256 newPlatformFee)
+    - event: Purchased(uint256 indexed listingId, address indexed buyer, address indexed nftContract, uint256 tokenId, uint256 price, address paymentToken)

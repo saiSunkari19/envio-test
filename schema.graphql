@@ -1,0 +1,100 @@
+type ClutchGeneralCollection_Approval {
+  id: ID!
+  owner: String!
+  approved: String!
+  tokenId: BigInt!
+}
+
+type ClutchGeneralCollection_ApprovalForAll {
+  id: ID!
+  owner: String!
+  operator: String!
+  approved: Boolean!
+}
+
+type ClutchGeneralCollection_BatchMetadataUpdate {
+  id: ID!
+  _fromTokenId: BigInt!
+  _toTokenId: BigInt!
+}
+
+type ClutchGeneralCollection_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type ClutchGeneralCollection_MetadataUpdate {
+  id: ID!
+  _tokenId: BigInt!
+}
+
+type ClutchGeneralCollection_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type ClutchGeneralCollection_Paused {
+  id: ID!
+  account: String!
+}
+
+type ClutchGeneralCollection_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  tokenId: BigInt!
+}
+
+type ClutchGeneralCollection_Unpaused {
+  id: ID!
+  account: String!
+}
+
+type Marketplace_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type Marketplace_Listed {
+  id: ID!
+  listingId: BigInt!
+  seller: String!
+  nftContract: String!
+  tokenId: BigInt!
+  price: BigInt!
+  paymentToken: String!
+}
+
+type Marketplace_ListingPriceUpdated {
+  id: ID!
+  listingId: BigInt!
+  newPrice: BigInt!
+}
+
+type Marketplace_NFTDelisted {
+  id: ID!
+  listingId: BigInt!
+}
+
+type Marketplace_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Marketplace_PlatformFeeUpdated {
+  id: ID!
+  newPlatformFee: BigInt!
+}
+
+type Marketplace_Purchased {
+  id: ID!
+  listingId: BigInt!
+  buyer: String!
+  nftContract: String!
+  tokenId: BigInt!
+  price: BigInt!
+  paymentToken: String!
+}
+
